@@ -99,7 +99,7 @@ class Maze:
     def get_neighbors(self, r: int, c: int) -> list:
         """
         Retourne les voisins franchissables dans l'ordre :
-        droite, bas, gauche, haut  (cohérent avec DFS demandé).
+        droite, bas, gauche, haut.
         """
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         return [(r + dr, c + dc) for dr, dc in directions

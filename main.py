@@ -8,6 +8,9 @@ Exécution : python main.py
 """
 
 import argparse
+import random
+import sys
+
 from maze  import Maze
 from dfs   import dfs
 from bfs   import bfs
@@ -115,6 +118,10 @@ def main():
                         help="Taille du labyrinthe NxN (défaut: 16)")
     args = parser.parse_args()
 
+    # Si il n'y a pas de seed, renseignée
+    if args.seed is None:
+        args.seed = random.randint(0, 99999)
+
     # ── Génération du labyrinthe
     print_section(f"LABYRINTHE {args.size}x{args.size}  (seed={args.seed})")
     maze = Maze(size=args.size, seed=args.seed)
@@ -133,3 +140,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# Affiche la version de python
+print(sys.version)

@@ -1,0 +1,2 @@
+# Aucune dépendance externe requise
+# Python 3.11 (exigée)
